@@ -4,14 +4,16 @@ const app = express();
 
 //app.use(express.json());
 
-app.use("/" , (req , res)=>{
-    res.send("<h1>getting the response</h1>")
-})
-app.use("./home/2" , (req , res)=>{
+
+app.get("/home" , (req , res)=>{
     res.send("<h1>getting the response 3</h1>")
 })
-app.use("./home" , (req , res)=>{
+app.post("/home" , (req , res)=>{
     res.send("<h1>getting the response 2</h1>")
+})
+
+app.use("/" , (req , res)=>{
+    res.send("<h1>getting the response</h1>")
 })
 
 app.listen(7777 , ()=>{
